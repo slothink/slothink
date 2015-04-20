@@ -1,0 +1,1 @@
+copy ../../target/generated/com -Destination ../../src/main/java -recurse -force

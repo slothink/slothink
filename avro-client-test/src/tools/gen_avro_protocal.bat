@@ -1,0 +1,2 @@
+java -jar avro-tools-1.7.2.jar idl ../../target/classes/SolmeEcmService.genavro ../../target/SolmeEcmService.avpr
+java -jar avro-tools-1.7.2.jar compile protocol ../../target/SolmeEcmService.avpr ../../target/generated

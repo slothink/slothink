@@ -1,0 +1,40 @@
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="urn:infinispan:config:5.3
+    http://www.infinispan.org/schemas/infinispan-config-5.3.xsd"
+            xmlns="urn:infinispan:config:5.3">
+    <global>
+        <transport
+                nodeName="Infinispan-Node1"
+                clusterName="infinispan-cluster"  >
+            <properties>
+                <property name="configurationFile" value="jgroups-tcp.xml" />
+            </properties>
+        </transport>
+    </global>
+
+    <default>
+        <eviction maxEntries="5" strategy="FIFO" />
+    </default>
+
+    <namedCache name="clusteredCache">
+        <clustering mode="replication">
+            <!--
+                    <stateRetrieval
+                       timeout="240000"
+                       fetchInMemoryState="false"
+                       alwaysProvideInMemoryState="false"
+                    />
+             -->
+            <stateTransfer
+                    timeout="240000"
+                    fetchInMemoryState="true"
+
+                    />
+
+            <sync replTimeout="20000"/>
+
+        </clustering>
+
+    </namedCache>
+
+</infinispan>

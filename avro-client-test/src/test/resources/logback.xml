@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <target>System.out</target>
+        <!--<filter class="com.comas.solme.smail.portal.web.StdOutFilter" />-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <target>System.err</target>
+        <!--<filter class="com.comas.solme.smail.portal.web.ErrOutFilter" />-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.comas.solme.ecm.client" level="trace">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+</configuration>

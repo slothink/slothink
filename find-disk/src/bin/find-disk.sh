@@ -1,0 +1,1 @@
+java -cp ./find-disk-1.0.S.jar com.slothink.find_disk.Launcher $1 $2
